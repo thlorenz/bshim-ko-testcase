@@ -1,0 +1,24 @@
+{
+  "name": "bshim-ko-test",
+  "version": "0.0.1",
+  "browser": {
+    "knockout": "./bower_components/knockout/dist/knockout.js",
+    "koproj": "./bower_components/knockout-projections/dist/knockout-projections.js"
+  },
+  "main": "./test.coffee",
+  "browserify": {
+    "transform": [
+      "browserify-shim",
+      "coffeeify"
+    ]
+  },
+  "browserify-shim": {
+    "knockout": { "exports": "ko" }
+
+  },
+  "devDependencies": {
+    "browserify": "^4.1.11",
+    "browserify-shim": "^3.5.0",
+    "coffeeify": "^0.6.0"
+  }
+}
