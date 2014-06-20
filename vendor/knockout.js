@@ -1,56 +1,3 @@
-(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);throw new Error("Cannot find module '"+o+"'")}var f=n[o]={exports:{}};t[o][0].call(f.exports,function(e){var n=t[o][1][e];return s(n?n:e)},f,f.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
-
-
-var ko = require("knockout")
-console.log("Got KO:", ko)
-console.log("Trying to get `koproj`")
-require("koproj")
-
-},{"knockout":3,"koproj":2}],2:[function(require,module,exports){
-(function (global){
-
-; ko = global.ko = require("/Users/bmh/GitRepos/bshim-ko-testcase/vendor/knockout.js");
-;__browserify_shim_require__=require;(function browserifyShim(module, define, require) {
-/*! Knockout projections plugin - version 1.1.0-pre
-------------------------------------------------------------------------------
-Copyright (c) Microsoft Corporation
-All rights reserved.
-Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0
-THIS CODE IS PROVIDED *AS IS* BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION ANY IMPLIED WARRANTIES OR CONDITIONS OF TITLE, FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABLITY OR NON-INFRINGEMENT.
-See the Apache Version 2.0 License for specific language governing permissions and limitations under the License.
-------------------------------------------------------------------------------
-*/
-
-(function(global, undefined) {
-    'use strict';
-
-    /* SNIP */
-
-    // Determines which module loading scenario we're in, grabs dependencies, and attaches to KO
-    function prepareExports() {
-        if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
-            // Node.js case - load KO synchronously
-            var ko = __browserify_shim_require__('knockout');
-            ko.projections = true
-            module.exports = ko;
-        } else if (typeof define === 'function' && define.amd) {
-            define(['knockout'], attachToKo);
-        } else if ('ko' in global) {
-            // Non-module case - attach to the global instance
-            attachToKo(global.ko);
-        }
-    }
-
-    prepareExports();
-
-})(this);
-
-}).call(global, module, undefined, undefined);
-
-}).call(this,typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"/Users/bmh/GitRepos/bshim-ko-testcase/vendor/knockout.js":3}],3:[function(require,module,exports){
-(function (global){
-;__browserify_shim_require__=require;(function browserifyShim(module, exports, require, define, browserify_shim__define__module__export__) {
 // Knockout JavaScript library v3.1.0
 // (c) Steven Sanderson - http://knockoutjs.com/
 // License: MIT (http://www.opensource.org/licenses/mit-license.php)
@@ -147,10 +94,3 @@ v,x=0,A,C;A=q[x];x++)switch(C=A.moved,A.status){case "deleted":C===p&&(v=r[t],v.
 v.S,v.Ia),v.Zb=!0)}l(h.beforeRemove,e);l(h.afterMove,z);l(h.afterAdd,m);a.a.f.set(d,c,s)}})();a.b("utils.setDomNodeChildrenFromArrayMapping",a.a.Ua);a.K=function(){this.allowTemplateRewriting=!1};a.K.prototype=new a.C;a.K.prototype.renderTemplateSource=function(b){var c=(9>a.a.oa?0:b.nodes)?b.nodes():null;if(c)return a.a.R(c.cloneNode(!0).childNodes);b=b.text();return a.a.Qa(b)};a.K.Ja=new a.K;a.Wa(a.K.Ja);a.b("nativeTemplateEngine",a.K);(function(){a.La=function(){var a=this.ac=function(){if(!t||
 !t.tmpl)return 0;try{if(0<=t.tmpl.tag.tmpl.open.toString().indexOf("__"))return 2}catch(a){}return 1}();this.renderTemplateSource=function(b,e,f){f=f||{};if(2>a)throw Error("Your version of jQuery.tmpl is too old. Please upgrade to jQuery.tmpl 1.0.0pre or later.");var h=b.data("precompiled");h||(h=b.text()||"",h=t.template(null,"{{ko_with $item.koBindingContext}}"+h+"{{/ko_with}}"),b.data("precompiled",h));b=[e.$data];e=t.extend({koBindingContext:e},f.templateOptions);e=t.tmpl(h,b,e);e.appendTo(w.createElement("div"));
 t.fragments={};return e};this.createJavaScriptEvaluatorBlock=function(a){return"{{ko_code ((function() { return "+a+" })()) }}"};this.addTemplate=function(a,b){w.write("<script type='text/html' id='"+a+"'>"+b+"\x3c/script>")};0<a&&(t.tmpl.tag.ko_code={open:"__.push($1 || '');"},t.tmpl.tag.ko_with={open:"with($1) {",close:"} "})};a.La.prototype=new a.C;var b=new a.La;0<b.ac&&a.Wa(b);a.b("jqueryTmplTemplateEngine",a.La)})()})})();})();
-
-; browserify_shim__define__module__export__(typeof ko != "undefined" ? ko : window.ko);
-
-}).call(global, undefined, undefined, undefined, undefined, function defineExport(ex) { module.exports = ex; });
-
-}).call(this,typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}]},{},[1])

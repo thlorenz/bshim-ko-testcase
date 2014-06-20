@@ -1,16 +1,15 @@
 {
   "name": "bshim-ko-test",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "repository": "https://github.com/brianmhunt/bshim-ko-testcase",
   "browser": {
-    "knockout": "./bower_components/knockout/dist/knockout.js",
-    "koproj": "./bower_components/knockout-projections/dist/knockout-projections.js"
+    "knockout": "./vendor/knockout.js",
+    "koproj": "./vendor/knockout-projections.js"
   },
-  "main": "./test.coffee",
+  "main": "./test.js",
   "browserify": {
     "transform": [
-      "browserify-shim",
-      "coffeeify"
+      "browserify-shim"
     ]
   },
   "browserify-shim": {
@@ -19,7 +18,6 @@
   },
   "devDependencies": {
     "browserify": "^4.1.11",
-    "browserify-shim": "^3.5.0",
-    "coffeeify": "^0.6.0"
+    "browserify-shim": "^3.5.0"
   }
 }
