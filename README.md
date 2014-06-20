@@ -10,8 +10,9 @@ See [browserify-shim#67](https://github.com/thlorenz/browserify-shim/issues/67)
 
 ### Setup
 
-$ bower install
-$ npm install
+`$ bower install`
+
+`$ npm install`
 
 ### Browserify-shim runtime error
 
