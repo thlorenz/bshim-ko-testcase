@@ -6,6 +6,9 @@
     "knockout": "./vendor/knockout.js",
     "koproj": "./vendor/knockout-projections.js"
   },
+  "scripts": {
+    "test": "browserify . -d >> bundle.js && open index.html"
+  },
   "main": "./test.js",
   "browserify": {
     "transform": [
