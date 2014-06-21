@@ -3,24 +3,16 @@
   "version": "0.0.2",
   "repository": "https://github.com/brianmhunt/bshim-ko-testcase",
   "browser": {
-    "knockout": "./vendor/knockout.js",
     "koproj": "./vendor/knockout-projections.js"
   },
   "scripts": {
-    "test": "browserify . -d >> bundle.js && open index.html"
+    "test": "browserify ./test.js -d >> bundle.js && open index.html"
   },
   "main": "./test.js",
-  "browserify": {
-    "transform": [
-      "browserify-shim"
-    ]
-  },
-  "browserify-shim": {
-    "knockout": { "exports": "ko" },
-    "koproj": { "depends": [ "knockout:ko" ] }
-  },
   "devDependencies": {
-    "browserify": "^4.1.11",
-    "browserify-shim": "^3.5.0"
+    "browserify": "^4.1.11"
+  },
+  "dependencies": {
+    "knockout": "~3.1.0"
   }
 }
